@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Authentication Module</title>
+</head>
+<body>
+        <section class="bod1" id="bod1" style="padding: 20px;">
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show " role="alert" style="color: aliceblue;">
+                <strong>Message: </strong>{{message}}
+            </div>
+            {%endfor%}
+
+            <h3 style="color: aliceblue; font-size: xx-large;">Welcome to Authentication Module</h3> 
+
+            {% if user.is_authenticated %}
+                <h1>Hello {{fname}},</h1>
+                <h3>You're successfully logged in</h3>
+                <h3>Please find your details below</h3>
+                <table style=" margin-left: 180px; padding: 10px; color: ivory;">
+
+                    <tr>
+                        <td>Name: </td>
+                        <td>{{fname}} {{lname}}</td>
+                    </tr>
+                    <tr>
+                        <td>Username: </td>
+                        <td>{{username}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td>{{email}}</td>
+                    </tr>
+
+                </table>
+                <br>
+                <button><a href="/logout" style="color: aliceblue;">Logout</a></button>
+            {% endif %}
+            
+        </section>
+</div>
+</body>
+</html>

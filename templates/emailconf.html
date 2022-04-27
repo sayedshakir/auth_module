@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Welcome to AuthenticationModule!
+
+Hello {{name}}!
+
+Please Confirm your account by clicking on the following link.
+
+Confirmation link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+
+{% endautoescape %}
