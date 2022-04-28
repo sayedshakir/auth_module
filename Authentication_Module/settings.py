@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 from .info import EMAIL_USE_TLS, EMAIL_HOST,EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT
-import tkinter
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +33,7 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = 'django-insecure-!m149l5ssnrltn0#!#3ez&u-hyb=_*wuw$u7pufp@-(9md*s31'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
