@@ -21,11 +21,12 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from .tokens import generate_token
 import AuthenticationModule
-import _tkinter
+import _tkinter, tkinter
 
 # Create your views here.
 
 def home(request):
+
     return render(request, "AuthenticationModule/index.html")
 
 def register(request):
@@ -173,3 +174,12 @@ def activate(request, uidb64, token):
         return redirect ('home')
     else:
         return render(request, 'activefail.html')
+
+try:
+    # for Python2
+    # sudo apt-get install python-tk 
+    from _tkinter import *   ## notice capitalized T in Tkinter 
+except ImportError:
+    # for Python3
+    # sudo apt-get install python3-tk 
+    from tkinter import *   ## notice lowercase 't' in tkinter here
