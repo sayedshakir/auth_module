@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+from telnetlib import AUTHENTICATION
 from .info import EMAIL_USE_TLS, EMAIL_HOST,EMAIL_HOST_USER, EMAIL_HOST_PASSWORD, EMAIL_PORT
 
 
@@ -47,7 +48,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_forms_bootstrap' ,
+    'django_forms_bootstrap',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +90,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+AUTHENTICATION_BACKENDS =[
+    'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
 WSGI_APPLICATION = 'Authentication_Module.wsgi.application'
@@ -148,4 +159,20 @@ STATICFILES_DIRS=[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL='/login'
+LOGIN_URL='/account/login'
+
+SITE_ID = 2
+
+LOGIN_REDIRECT_URL='/loggedin'
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE':[
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online'
+        }
+    }
+}

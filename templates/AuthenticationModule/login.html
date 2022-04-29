@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +23,8 @@
 
 				<h1>Login Here!</h1>
 				<div class="social-container">
-					<a href="#" style="background-color: aliceblue;" class="social"><i class="fa fa-facebook fa-2x"></i></a>
-					<a href="#" style="background-color: aliceblue;" class="social"><i class="fab fa fa-google fa-2x"></i></a>
+					<a href="{% provider_login_url 'facebook' %}" style="background-color: aliceblue;" class="social"><i class="fa fa-facebook fa-2x"></i></a>
+					<a href="{% provider_login_url 'google' %}" style="background-color: aliceblue;" class="social"><i class="fab fa fa-google fa-2x"></i></a>
 				</div>
 				<input type="text" id="username" name="username" placeholder="Username" required/>
 				<input type="password" id="password" name="password" placeholder="Password" required/>

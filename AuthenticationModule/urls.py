@@ -9,6 +9,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
     path('', views.home, name="home"),
@@ -18,10 +20,13 @@ urlpatterns = [
     
 
     path('register', views.register, name="register"),
-    path('login', views.loginn, name="loginn"),
+    
     path('logout', views.logoutt, name="logoutt"),
     path('loggedin', views.loggedin, name="loggedin"),
     path('activate/<uidb64>/<token>', views.activate, name="activate"),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+    path('login', views.loginn, name="loginn"),
 
     path('password_reset/',auth_views.PasswordResetView.as_view(),name='password_reset'),
     path('password_reset/done/',auth_views.PasswordResetDoneView.as_view(),name='password_reset_done'),
