@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href= "{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Authentication Module</title>
+</head>
+<body style="background-image:url('{% static 'media/index_bg.jpg' %}');">
+        <section class="bod" id="bod">
+            {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show " role="alert" style="color: aliceblue;">
+                <strong>Message: </strong>{{message}}
+            </div>
+            {%endfor%}
+
+            <h3 style="color: aliceblue; font-size: xx-large;">Hi! Welcome to Authentication Module</h3> 
+            
+                <button type="submit"> <a href="/register">Register</a></button>
+                <button type="submit"> <a href="/login"> Login</a> </button> 
+           
+            
+        </section>
+</div>
+</body>
+</html>
