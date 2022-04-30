@@ -48,7 +48,7 @@ def register(request):
             return redirect('/register')
 
         if len(username)>10:
-            messages.error(request, "Username must be of upto chars")
+            messages.error(request, "Username must be of upto 10 characters")
             return redirect('/register')
 
         SpecialSym =['$', '@', '#', '%']
@@ -75,7 +75,7 @@ def register(request):
             return redirect('/register')
           
         if not any(char in SpecialSym for char in password):
-            messages.error(request, "Password should have maximum 20 chaarcters")
+            messages.error(request, "Password should have atleast a special charater like $, @, #, % ")
             return redirect('/register')
 
         if password!=cnfpassword:
