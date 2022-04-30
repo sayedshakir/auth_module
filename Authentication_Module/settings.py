@@ -96,7 +96,7 @@ AUTHENTICATION_BACKENDS =[
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
-WSGI_APPLICATION = 'Authentication_Module.wsgi.application'
+WSGI_APPLICATION = 'AuthenticationModule.wsgi.application'
 
 
 # Database
