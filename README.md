@@ -11,7 +11,7 @@ Please follow the below guide to test the module
 # head to the downloaded zip file and extract in your local computer
 # open cmd/terminal as per your OS
 # change your directory to the projects dowloaded location
-# use command venv\Scrips\activate in case of Windows OS and source/venve/bin/activate in case of Linux OS/Mac OS
+# use command venv\Scripts\activate in case of Windows OS and source/venve/bin/activate in case of Linux OS/Mac OS
 the above command will activate the virtual env and now our project can run in localhost
 # run the command: python manage.py runserver - this will start running the localhost server and you'll be able to see my application and navigate to registration, login and reset password page as per one's need
 #Features:
