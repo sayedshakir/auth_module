@@ -1,1 +1,1 @@
-web: gunicorn AuthenticationModule.wsgi:application --log-file -
+web: gunicorn Authentication_Module.wsgi
